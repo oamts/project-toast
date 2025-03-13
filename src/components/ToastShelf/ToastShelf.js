@@ -8,7 +8,12 @@ function ToastShelf() {
   const { getToasts, removeToast } = useGetToastProvider();
   const list = getToasts();
   return (
-    <ol className={styles.wrapper}>
+    <ol
+      className={styles.wrapper}
+      role="region"
+      aria-live="polite"
+      aria-label="Notification"
+    >
       {list.map(({ message, variant, id }) => (
         <li className={styles.toastWrapper} key={id}>
           <Toast
